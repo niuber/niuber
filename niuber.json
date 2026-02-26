@@ -9,30 +9,6 @@
       "name": "线路按🌟-❤️-🌵-🌱推荐"
     },
     {
-      "name": "🌟潇洒本地local",
-      "url": "http://192.168.0.100:86/tvBoxOSC/tvbox/api.json"
-    },
-    {
-      "name": "🌟潇洒本地v4",
-      "url": "http://niuber.dynv6.net:86/tvBoxOSC/tvbox/api.json"
-    },
-    {
-      "name": "🌟潇洒本地v6",
-      "url": "http://niuber.dns.army:86/tvBoxOSC/tvbox/api.json"
-    },
-    {
-      "name": "🌟FongMi本地loca",
-      "url": "http://192.168.0.100:86/FongMi/FongMi.json"
-    },
-    {
-      "name": "🌟FongMi本地v4",
-      "url": "http://niuber.dynv6.net:86/FongMi/FongMi.json"
-    },
-    {
-      "name": "🌟FongMi本地v6",
-      "url": "http://niuber.dns.army:86/FongMi/FongMi.json"
-    },
-    {
       "name": "🌟饭太硬",
       "url": "http://www.饭太硬.com/tv"
     },
@@ -270,3 +246,4 @@
     }
   ]
 }
+
