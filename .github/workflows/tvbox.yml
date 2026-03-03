@@ -1,5 +1,5 @@
 
-name: Sync TVBox Resource and Update Config
+name: update TVBox
 
 on:
   schedule:
