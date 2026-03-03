@@ -1,4 +1,3 @@
-
 name: update TVBox
 
 on:
@@ -20,16 +19,31 @@ jobs:
         with:
           node-version: '18'
 
-      - name: clean TVBoxOSC
+      - name: Clean TVBoxOSC Directory
         run: |
-          # 清理旧文件
-          rm -rf TVBoxOSC/* || echo "Directory TVBoxOSC does not exist or is empty"          
+          if [ -d "TVBoxOSC" ]; then
+            rm -rf TVBoxOSC/*
+            echo "TVBoxOSC directory cleaned."
+          else
+            echo "TVBoxOSC directory does not exist, skipping cleanup."
+          fi
 
       - name: Download and Extract Resource
-        run: |       
+        run: |
           curl -L "https://gh-proxy.org/https://github.com/PizazzGY/NewTVBox/raw/refs/heads/main/单线路.zip" -o temp.zip
-          unzip -o temp.zip -d tvbox/
-          rm temp.zip
+          unzip -o temp.zip -d tvbox/ || echo "Unzip failed or no files extracted."
+          rm -f temp.zip
+
+      - name: Verify Extracted Files
+        run: |
+          echo "Checking contents of tvbox/ directory:"
+          ls -la tvbox/
+          if [ -f "tvbox/update-config.js" ]; then
+            echo "update-config.js found. Proceeding to update configuration."
+          else
+            echo "Error: update-config.js not found in tvbox/. Please check the downloaded resource."
+            exit 1
+          fi
 
       - name: Update API Configuration
         run: |
@@ -40,5 +54,5 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
-          git commit -m "Sync TVBox resource and update config $(date +'%Y-%m-%d')" || echo "No changes to commit"
-          git push
+          git commit -m "定时更新潇洒tvbox并更新lives、parses、ads信息，$(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git push origin HEAD:main || echo "Push failed, check token permissions."
