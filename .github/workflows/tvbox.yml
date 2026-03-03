@@ -1,42 +1,40 @@
 
-name: Update TVBox Source
+name: Sync TVBox Resource and Update Config
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # 每6小时执行一次
-  workflow_dispatch: #手动执行
-
-env:
-  SOURCE_JSON_PATH: ./source/api.json
-  TARGET_JSON_PATH: ./tvbox/api.json
+    - cron: '0 2 * * *'
+  workflow_dispatch:
 
 jobs:
-  update-source:
+  sync-resource:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.SECRET_TVBOX }}
 
-      - name: Setup directories
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Download and Extract Resource
         run: |
           mkdir -p tvbox
+          curl -L "https://gh-proxy.org/https://github.com/PizazzGY/NewTVBox/raw/refs/heads/main/单线路.zip" -o temp.zip
+          unzip temp.zip -d tvbox/
+          rm temp.zip
 
-      - name: Copy source to target directory
+      - name: Update API Configuration
         run: |
-          cp ${{ env.SOURCE_JSON_PATH }} ${{ env.TARGET_JSON_PATH }}
+          node update-config.js
 
-      - name: Update specific fields in target JSON
-        run: |
-          jq '.lives = (input | .lives)' ${{ env.TARGET_JSON_PATH }} < ${{ env.SOURCE_JSON_PATH }} > ./temp.json && mv ./temp.json ${{ env.TARGET_JSON_PATH }}
-          jq '.parses = (input | .parses)' ${{ env.TARGET_JSON_PATH }} < ${{ env.SOURCE_JSON_PATH }} > ./temp.json && mv ./temp.json ${{ env.TARGET_JSON_PATH }}
-          jq '.ads = (input | .ads)' ${{ env.TARGET_JSON_PATH }} < ${{ env.SOURCE_JSON_PATH }} > ./temp.json && mv ./temp.json ${{ env.TARGET_JSON_PATH }}
-
-      - name: Commit changes
+      - name: Commit and Push Changes
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
-          git commit -m "Auto update TVBox source from local" || echo "No changes to commit"
-          git push origin main
+          git commit -m "Sync TVBox resource and update config $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git push
