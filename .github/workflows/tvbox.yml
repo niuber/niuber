@@ -22,7 +22,9 @@ jobs:
 
       - name: Download and Extract Resource
         run: |
-          rm -rf TVBoxOSC/*
+          # 清理旧文件
+          rm -rf TVBoxOSC/* || echo "Directory TVBoxOSC does not exist or is empty"          
+          
           curl -L "https://gh-proxy.org/https://github.com/PizazzGY/NewTVBox/raw/refs/heads/main/单线路.zip" -o temp.zip
           unzip -o temp.zip -d tvbox/
           rm temp.zip
