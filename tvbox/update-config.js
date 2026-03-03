@@ -11,9 +11,10 @@ console.log('targetApiPath',targetApiPath);
 try {
     // 读取源配置文件
     const srcApi = JSON.parse(fs.readFileSync(srcApiPath, 'utf8'));
-
+    console.log('srcApi',srcApi);
     // 读取目标配置文件
     const api = JSON.parse(fs.readFileSync(targetApiPath, 'utf8'));
+    console.log('api',api);
 
     // 替换指定属性
     api.lives = srcApi.lives;

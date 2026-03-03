@@ -22,14 +22,10 @@ jobs:
 
       - name: Download and Extract Resource
         run: |
-          mkdir -p tvbox
+          # mkdir -p tvbox
           curl -L "https://gh-proxy.org/https://github.com/PizazzGY/NewTVBox/raw/refs/heads/main/单线路.zip" -o temp.zip
           unzip temp.zip -d tvbox/
           rm temp.zip
-
-      - name: Update API Configuration
-        run: |
-          node ./tvbox/update-config.js
 
       - name: Commit and Push Changes
         run: |
