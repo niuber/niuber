@@ -4,7 +4,7 @@ const fs = require('fs');
 // 读取源配置文件
 const srcApi = JSON.parse(fs.readFileSync('../api.json', 'utf8'));
 // 读取目标配置文件
-const api = JSON.parse(fs.readFileSync('./TVBoxOSC/api.json', 'utf8'));
+const api = JSON.parse(fs.readFileSync('../TVBoxOSC/tvbox/api.json', 'utf8'));
 
 // 替换指定属性
 api.lives = srcApi.lives;
