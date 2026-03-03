@@ -27,6 +27,10 @@ jobs:
           unzip temp.zip -d tvbox/
           rm temp.zip
 
+      - name: Update API Configuration
+        run: |
+          node ./tvbox/update-config.js
+
       - name: Commit and Push Changes
         run: |
           git config --global user.name 'github-actions[bot]'
