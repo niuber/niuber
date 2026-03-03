@@ -3,7 +3,7 @@ name: update TVBox
 
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 */4 * * *'
   workflow_dispatch:
 
 jobs:
@@ -29,7 +29,7 @@ jobs:
 
       - name: Update API Configuration
         run: |
-          node /tvbox/update-config.js
+          node ./tvbox/update-config.js
 
       - name: Commit and Push Changes
         run: |
