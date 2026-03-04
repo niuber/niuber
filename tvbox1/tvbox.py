@@ -51,7 +51,7 @@ def modify_json(src_path):
                 data['urls'][0]['name'] = f"🦅🦅更新于:{current_time}"
 
         # 将修改后的数据写回文件
-        with open('your_file.json', 'w', encoding='utf-8') as file:
+        with open('niuber.json', 'w', encoding='utf-8') as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
 
     except Exception as e:
