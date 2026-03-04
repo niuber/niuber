@@ -52,6 +52,7 @@ jobs:
       env:
         SRC_FILE: './tvbox1/api.json'  # 源 JSON 文件路径
         DEST_FILE: './tvbox1/TVBoxOSC/tvbox/api.json'    # 目标 JSON 文件路径
+        JSON_FILE: './niuber/niuber.json'    # 目标 JSON 文件路径
 
     - name: Commit and push changes
       run: |

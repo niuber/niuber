@@ -35,7 +35,7 @@ def modify_api(src_path, dest_path):
         print(f"❌ 修改api.json出错: {str(e)}")
         raise
 
-def modify_api(src_path):
+def modify_json(src_path):
     """修改niuber.json的更新时间"""
     try:
         # 读取源文件
@@ -65,5 +65,6 @@ if __name__ == "__main__":
     #修改api.json 添加直播、解析、广告过滤
     modify_api(src_file, dest_file)
 
-    jsonpath = os.getenv('SRC_FILE', './niuber/niuber.json')
-
+    jsonpath = os.getenv('JSON_FILE', './niuber/niuber.json')
+    #修改niuber.json更新时间
+    modify_json(jsonpath)
