@@ -1,6 +1,7 @@
 import json
 import os
 from datetime import datetime
+import pytz
 
 
 def modify_api(src_path, dest_path):
@@ -45,8 +46,11 @@ def modify_json(src_path):
         if isinstance(data, dict) and isinstance(data.get('urls', []), list):
             # 获取数组的第一个元素（如果存在）
             if data['urls']:
-                # 获取当前时间并格式化为字符串（例如："2023-04-01 12:34:56"）
-                current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                # 创建北京时间时区对象
+                beijing_tz = pytz.timezone('Asia/Shanghai')
+                # 获取当前北京时间
+                beijing_time = datetime.now(beijing_tz)
+                current_time = beijing_time.strftime('%Y-%m-%d %H:%M:%S')
                 # 更新name属性，包括当前时间
                 data['urls'][0]['name'] = f"🦅🦅更新于:{current_time}"
 
