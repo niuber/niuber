@@ -12,5 +12,4 @@ git加速地址：
 - https://cdn.gh-proxy.org/https://raw.githubusercontent.com/niuber/niuber/refs/heads/main/niuber.json
 - https://gh-proxy.org/https://raw.githubusercontent.com/niuber/niuber/refs/heads/main/niuber.json
 
-## 2、自用IPTV源
 
