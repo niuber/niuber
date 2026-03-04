@@ -42,13 +42,13 @@ def modify_json(src_path):
         with open(src_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
         # 确保data是一个包含数组的字典，并且数组非空
-        if isinstance(data, dict) and isinstance(data.get('array_key', []), list):
+        if isinstance(data, dict) and isinstance(data.get('urls', []), list):
             # 获取数组的第一个元素（如果存在）
-            if data['array_key']:
+            if data['urls']:
                 # 获取当前时间并格式化为字符串（例如："2023-04-01 12:34:56"）
                 current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 # 更新name属性，包括当前时间
-                data['array_key'][0]['name'] = f"🦅🦅更新于:{current_time}"
+                data['urls'][0]['name'] = f"🦅🦅更新于:{current_time}"
 
         # 将修改后的数据写回文件
         with open('your_file.json', 'w', encoding='utf-8') as file:
