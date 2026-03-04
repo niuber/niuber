@@ -1,0 +1,62 @@
+name: update TVBox 接口
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  process-files:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.SECRET_TVBOX }}  # 确保有写入权限
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install requests
+
+    - name: Clean old files
+      run: |
+        TARGET_DIR="./tvbox/TVBoxOSC/"  # 目标目录（可修改）
+        
+        # 清理旧文件（避免冲突）
+        if [ -d "$TARGET_DIR" ]; then
+          rm -rf "$TARGET_DIR"
+        fi
+        mkdir -p "$TARGET_DIR"
+
+    - name: Download and extract file
+      run: |
+        # 下载 ZIP 文件（替换为你的 URL）
+        DOWNLOAD_URL="https://gh-proxy.org/https://github.com/PizazzGY/NewTVBox/raw/refs/heads/main/单线路.zip"
+        wget -O ./temp.zip "$DOWNLOAD_URL"
+        
+        # 解压到目标目录
+        unzip ./temp.zip -d tvbox/
+        
+        # 删除临时 ZIP 文件
+        rm -f ./temp.zip
+
+    - name: Modify JSON file
+      run: |
+        python3 ./.github/tvbox/tvbox.py
+      env:
+        SRC_FILE: './tvbox/api.json'  # 源 JSON 文件路径
+        DEST_FILE: './tvbox/TVBoxOSC/tvbox/api.json'    # 目标 JSON 文件路径
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add .
+        git commit -m "定时更新潇洒tvbox并更新lives、parses、ads信息，$(date +'%Y-%m-%d')" || echo "No changes to commit"
+        git push
