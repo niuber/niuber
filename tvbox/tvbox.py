@@ -64,8 +64,8 @@ def modify_json(src_path):
 
 if __name__ == "__main__":
     # 从环境变量读取路径（默认值用于本地测试）
-    src_file = os.getenv('SRC_FILE', './tvbox1/api.json')
-    dest_file = os.getenv('DEST_FILE', './tvbox1/TVBoxOSC/tvbox/api.json')
+    src_file = os.getenv('SRC_FILE', './tvbox/api.json')
+    dest_file = os.getenv('DEST_FILE', './tvbox/TVBoxOSC/tvbox/api.json')
     #修改api.json 添加直播、解析、广告过滤
     modify_api(src_file, dest_file)
 
