@@ -22,7 +22,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install requests,pytz
+        pip install requests pytz
 
     - name: Clean old files
       run: |
