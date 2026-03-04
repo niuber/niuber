@@ -65,6 +65,6 @@ if __name__ == "__main__":
     #修改api.json 添加直播、解析、广告过滤
     modify_api(src_file, dest_file)
 
-    jsonpath = os.getenv('JSON_FILE', './niuber/niuber.json')
+    jsonpath = os.getenv('JSON_FILE', './niuber.json')
     #修改niuber.json更新时间
     modify_json(jsonpath)
