@@ -5,7 +5,7 @@ const path = require('path');
 // 获取当前工作目录下的文件路径
 const srcApiPath = path.join(__dirname, 'api.json');
 console.log('srcApiPath',srcApiPath);
-const targetApiPath = path.join(__dirname, 'TVBoxOSC', 'api.json');
+const targetApiPath = path.join(__dirname, 'TVBoxOSC/tvbox', 'api.json');
 console.log('targetApiPath',targetApiPath);
 
 try {
