@@ -31,7 +31,7 @@ jobs:
       - name: Download and Extract Resource
         run: |
           curl -L "https://gh-proxy.org/https://github.com/PizazzGY/NewTVBox/raw/refs/heads/main/单线路.zip" -o temp.zip
-          unzip temp.zip -d tvbox/ || echo "Unzip failed or no files extracted."
+          unzip temp.zip -d tvbox/
           rm -f temp.zip
 
       - name: Verify Extracted Files
