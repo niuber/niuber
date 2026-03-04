@@ -28,7 +28,26 @@ jobs:
             echo "TVBoxOSC directory does not exist, skipping cleanup."
           fi
 
+      - name: Download and Extract Resource
+        run: |
+          curl -L "https://gh-proxy.org/https://github.com/PizazzGY/NewTVBox/raw/refs/heads/main/单线路.zip" -o temp.zip
+          unzip temp.zip -d tvbox/
+          rm -f temp.zip
 
+      - name: Verify Extracted Files
+        run: |
+          echo "Checking contents of tvbox/ directory:"
+          ls -la tvbox/
+          if [ -f "tvbox/update-config.js" ]; then
+            echo "update-config.js found. Proceeding to update configuration."
+          else
+            echo "Error: update-config.js not found in tvbox/. Please check the downloaded resource."
+            exit 1
+          fi
+
+      - name: Update API Configuration
+        run: |
+          node ./tvbox/update-config.js
 
       - name: Commit and Push Changes
         run: |
