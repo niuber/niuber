@@ -21,8 +21,8 @@ jobs:
 
       - name: Clean TVBoxOSC Directory
         run: |
-          if [ -d "TVBoxOSC" ]; then
-            rm -rf TVBoxOSC
+          if [ -d "tvbox/TVBoxOSC" ]; then
+            rm -rf tvbox/TVBoxOSC
             echo "TVBoxOSC directory cleaned."
           else
             echo "TVBoxOSC directory does not exist, skipping cleanup."
