@@ -1,59 +1,81 @@
+# 工作流名称定义
+name: GitHub API Workflow Dispatch
 
-# GitHub Action的元数据定义
-name: run GitHub Action  # Action的显示名称
-
+# 触发条件配置
 on:
   schedule:
     - cron: '0 */2 * * *'
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:  # 手动触发 - 允许用户在 GitHub 界面手动执行此工作流
+  # 注意：这里没有定义 inputs 参数，因此触发时无需填写任何输入参数
 
-# 定义Action的输入参数
-inputs:
-  token:
-    description: 'GitHub Personal Access Token'  # 参数描述
-    required: true                               # 是否必需
-  owner:
-    description: 'Repository owner'
-    required: true
-  repo:
-    description: 'Repository name'
-    required: true
-  workflow_id:
-    description: 'Workflow ID or filename'
-    required: true
-  ref:
-    description: 'Branch or tag to trigger workflow on'
-    required: false           # 非必需参数
-    default: 'main'          # 默认值为main分支
-  inputs:
-    description: 'JSON string of inputs for the workflow'
-    required: false
-    default: '{}'            # 默认为空JSON对象
+# 作业定义
+jobs:
+  # 作业名称：dispatch-workflow
+  dispatch-workflow:
+    # 指定运行环境：最新版 Ubuntu
+    runs-on: ubuntu-latest
 
-# 定义Action的执行流程
-runs:
-  using: 'composite'         # 使用复合型Action（包含多个步骤）
-  steps:                     # 定义执行步骤
-    - name: Setup Python     # 步骤1：设置Python环境
-      uses: actions/setup-python@v4  # 使用官方Python setup Action
-      with:
-        python-version: '3.x'        # 指定Python版本
-        token: ${{ secrets.SECRET_TVBOX }} #GitHub个人访问令牌（必需）
-        owner: 'niuber'   #目标仓库的所有者（必需）
-        repo: 'iptv-api' #目标仓库名称（必需）
-        workflow_id: 'main.yml'    #工作流ID或文件名（必需）
-        ref: 'main' #触发工作流的分支或标签（可选，默认为main）
-        
-    - name: Install dependencies  # 步骤2：安装依赖
-      run: |
-        python -m pip install --upgrade pip  # 升级pip
-        pip install requests                 # 安装requests库
-      shell: bash                          # 指定使用的shell
-      
-    - name: Run trigger script   # 步骤3：运行触发脚本
-      run: |
-        # 执行Python脚本，传入所有输入参数
-        # ${{ github.action_path }}获取当前Action路径
-        # 各种${{ inputs.XXX }}引用对应输入参数
-        python ${{ github.action_path }}/run_gitHub_action.py "${{ inputs.token }}" "${{ inputs.owner }}" "${{ inputs.repo }}" "${{ inputs.workflow_id }}" "${{ inputs.ref }}" '${{ inputs.inputs }}'
-      shell: bash
+    # 环境变量定义 - 用于存储配置信息
+    env:
+      TARGET_REPO: niuber/iptv-api          # 目标仓库（格式：用户名/仓库名）
+      WORKFLOW_ID: main.yml        # 要触发的工作流文件名
+      TARGET_BRANCH: main                     # 目标分支名称
+      GH_TOKEN: ${{ secrets.SECRET_TVBOX }}  # GitHub 个人访问令牌（从 Secrets 获取）
+
+    # 执行步骤序列
+    steps:
+      # 步骤1：检出当前仓库代码
+      - name: Checkout repository
+        uses: actions/checkout@v4  # 使用官方 checkout action 第4版
+
+      # 步骤2：设置 Python 环境
+      - name: Set up Python
+        uses: actions/setup-python@v5  # 使用官方 Python setup action 第5版
+        with:
+          python-version: '3.10'  # 指定 Python 版本为 3.10
+
+      # 步骤3：安装 Python 依赖包
+      - name: Install dependencies
+        run: pip install requests  # 安装 requests 库用于发送 HTTP 请求
+
+      # 步骤4：执行 API 调用以触发目标工作流
+      - name: Execute API call
+        run: |
+          # 使用 Python Here Document 编写内联脚本
+          python << 'EOF'
+          import requests
+          import os
+
+          # 从环境变量中读取配置参数
+          token = os.environ['GH_TOKEN']           # GitHub 访问令牌
+          repo = os.environ['TARGET_REPO']         # 目标仓库
+          workflow_id = os.environ['WORKFLOW_ID']  # 工作流文件 ID
+          branch = os.environ['TARGET_BRANCH']     # 目标分支
+
+          # 构建 GitHub API 请求 URL
+          url = f'https://api.github.com/repos/{repo}/actions/workflows/{workflow_id}/dispatches'
+          
+          # 设置请求头部信息
+          headers = {
+              'Accept': 'application/vnd.github.v3+json',  # 指定 API 版本
+              'Authorization': f'token {token}'            # 认证令牌
+          }
+          
+          # 构建请求数据
+          data = {'ref': branch}  # 指定触发的工作流分支
+
+          # 发送 POST 请求触发工作流
+          response = requests.post(url, headers=headers, json=data)
+          
+          # 打印响应状态码
+          print(f'Status Code: {response.status_code}')
+
+          # 检查请求结果
+          if response.status_code == 204:
+              # 204 状态码表示成功触发（无内容返回）
+              print('✅ 工作流触发成功！')
+          else:
+              # 其他状态码表示触发失败
+              print('❌ 工作流触发失败！')
+              print(f'Response: {response.text}')  # 打印详细错误信息
+          EOF
