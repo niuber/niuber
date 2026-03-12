@@ -1,0 +1,61 @@
+
+# GitHub Action的元数据定义
+name: run GitHub Action  # Action的显示名称
+description: '定时手动触发 GitHub Action'  # Action的功能描述
+author: 'Niuber'  # Action作者
+
+# Action的品牌标识（在GitHub Marketplace中显示）
+branding:
+  icon: play-circle  # 使用的图标名称
+  color: blue       # 图标的颜色
+
+# 定义Action的输入参数
+inputs:
+  token:
+    description: 'GitHub Personal Access Token'  # 参数描述
+    required: true                               # 是否必需
+  owner:
+    description: 'Repository owner'
+    required: true
+  repo:
+    description: 'Repository name'
+    required: true
+  workflow_id:
+    description: 'Workflow ID or filename'
+    required: true
+  ref:
+    description: 'Branch or tag to trigger workflow on'
+    required: false           # 非必需参数
+    default: 'main'          # 默认值为main分支
+  inputs:
+    description: 'JSON string of inputs for the workflow'
+    required: false
+    default: '{}'            # 默认为空JSON对象
+
+# 定义Action的执行流程
+runs:
+  using: 'composite'         # 使用复合型Action（包含多个步骤）
+  steps:                     # 定义执行步骤
+    - name: Setup Python     # 步骤1：设置Python环境
+      uses: actions/setup-python@v4  # 使用官方Python setup Action
+      with:
+        python-version: '3.x'        # 指定Python版本
+        token: ${{ secrets.SECRET_TVBOX }} #GitHub个人访问令牌（必需）
+        owner: 'niuber'   #目标仓库的所有者（必需）
+        repo: 'iptv-api' #目标仓库名称（必需）
+        workflow_id: 'main.yml'    #工作流ID或文件名（必需）
+        ref: 'main' #触发工作流的分支或标签（可选，默认为main）
+        
+    - name: Install dependencies  # 步骤2：安装依赖
+      run: |
+        python -m pip install --upgrade pip  # 升级pip
+        pip install requests                 # 安装requests库
+      shell: bash                          # 指定使用的shell
+      
+    - name: Run trigger script   # 步骤3：运行触发脚本
+      run: |
+        # 执行Python脚本，传入所有输入参数
+        # ${{ github.action_path }}获取当前Action路径
+        # 各种${{ inputs.XXX }}引用对应输入参数
+        python ${{ github.action_path }}/run_gitHub_action.py "${{ inputs.token }}" "${{ inputs.owner }}" "${{ inputs.repo }}" "${{ inputs.workflow_id }}" "${{ inputs.ref }}" '${{ inputs.inputs }}'
+      shell: bash
