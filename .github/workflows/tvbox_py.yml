@@ -1,4 +1,4 @@
-name: update TVBox 接口
+name: update TVBox
 
 on:
   schedule:
