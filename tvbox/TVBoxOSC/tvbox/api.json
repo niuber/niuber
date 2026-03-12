@@ -1632,7 +1632,8 @@
             "changeable": 0
         }
     ],
-    "lives": [{
+    "lives": [
+        {
             "name": "migu",
             "type": 0,
             "url": "https://develop202.github.io/migu_video/interface.txt",
@@ -1641,7 +1642,8 @@
             "timeout": 20,
             "epg": "https://epg.112114.xyz/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
-        }, {
+        },
+        {
             "name": "游魂直播",
             "type": 0,
             "url": "https://www.iyouhun.com/tv/zb",
@@ -1649,7 +1651,8 @@
             "ua": "okhttp/3",
             "epg": "https://epg.112114.eu.org/?ch={name}&date={date}",
             "logo": "https://epg.112114.eu.org/logo/{name}.png"
-        }, {
+        },
+        {
             "name": "IPv4 赛选源",
             "type": 0,
             "url": "http://kakaxi.indevs.in/ipv4.txt",
@@ -1657,12 +1660,14 @@
             "ua": "okhttp/3.15",
             "epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
-        }, {
+        },
+        {
             "name": "卡卡西线路",
             "type": 0,
             "url": "https://gh-proxy.com/https://raw.githubusercontent.com/kakaxi-1/IPTV/main/ipv4.txt",
             "epg": "http://epg.112114.eu.org/?ch={name}&date={date}"
-        }, {
+        },
+        {
             "name": "猫TV线路",
             "type": 0,
             "url": "http://rihou.cc:567/gggg.nzk",
@@ -1670,14 +1675,16 @@
             "ua": "okhttp/3",
             "epg": "https://epg.112114.eu.org/?ch={name}&date={date}",
             "logo": "https://epg.112114.eu.org/logo/{name}.png"
-        }, {
+        },
+        {
             "name": "BMCH",
             "type": "0",
             "pass": true,
             "url": "https://gh.halonice.com/https:/raw.githubusercontent.com/big-mouth-cn/tv/main/iptv-ok.m3u",
             "epg": "https://epg.v1.mk/json?ch={name}&date={date}",
             "logo": "https://epg.v1.mk/logo/{name}.png"
-        }, {
+        },
+        {
             "name": "Yoursmile",
             "type": 0,
             "url": "https://ghfast.top/raw.githubusercontent.com/yoursmile66/TVBox/refs/heads/main/live.txt",
@@ -1685,23 +1692,27 @@
             "ua": "okhttp/3.15",
             "epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
-        }, {
+        },
+        {
             "name": "直播电视IPV4",
             "type": 0,
             "url": "https://live.zbds.top/tv/iptv4.txt",
             "playerType": 2,
             "ua": "okhttp/3.15"
-        }, {
+        },
+        {
             "name": "范明明",
             "type": 0,
             "url": "https://cdn.gh-proxy.org/https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u",
             "playerType": 2
-        }, {
+        },
+        {
             "name": "潇洒AI直播",
             "type": 0,
             "url": "https://cdn.gh-proxy.org/https://raw.githubusercontent.com/PizazzGY/TV/master/output/user_result.m3u",
             "playerType": 2
-        }, {
+        },
+        {
             "name": "netlify",
             "type": 0,
             "url": "https://shimmering-taffy-8c2940.netlify.app/",
@@ -1709,7 +1720,8 @@
             "ua": "okhttp/3.15",
             "epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
-        }, {
+        },
+        {
             "name": "宝盒直播",
             "type": 0,
             "url": "https://3043.kstore.space/bhvip/bhzb.txt",
@@ -1717,17 +1729,20 @@
             "ua": "okhttp/3",
             "epg": "https://epg.112114.eu.org/?ch={name}&date={date}",
             "logo": "https://epg.112114.eu.org/logo/{name}.png"
-        }, {
+        },
+        {
             "name": "茶客源",
             "type": 0,
             "url": "https://cdn.gh-proxy.org/https://raw.githubusercontent.com/vamoschuck/TV/main/M3U",
             "playerType": 2
-        }, {
+        },
+        {
             "name": "zbefine源",
             "type": 0,
             "url": "https://cdn.gh-proxy.org/https://raw.githubusercontent.com/zbefine/iptv/main/iptv.m3u",
             "playerType": 2
-        }, {
+        },
+        {
             "name": "APTV",
             "type": 0,
             "url": "https://gh-proxy.com/https://github.com/Kimentanm/aptv/raw/master/m3u/iptv.m3u",
@@ -1735,22 +1750,26 @@
             "logo": "https://epg.iill.top/logo/{name}.png",
             "ua": "okhttp/3.15,AptvPlayer/1.4.0",
             "timeout": 10
-        }, {
+        },
+        {
             "name": "Guovin",
             "type": 0,
             "url": "https://cdn.gh-proxy.org/https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
             "playerType": 2
-        }, {
+        },
+        {
             "name": "suxuang",
             "type": 0,
             "url": "https://cdn.gh-proxy.org/https://raw.githubusercontent.com/suxuang/myIPTV/refs/heads/main/ipv4.m3u",
             "playerType": 2
-        }, {
+        },
+        {
             "name": "YueChan",
             "type": 0,
             "url": "https://cdn.gh-proxy.org/https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u",
             "playerType": 2
-        }, {
+        },
+        {
             "name": "网络收集",
             "type": 0,
             "url": "https://gitee.com/xxy002/zhiboyuan/raw/master/dsy",
@@ -1758,7 +1777,8 @@
             "ua": "okhttp/3",
             "epg": "https://epg.112114.eu.org/?ch={name}&date={date}",
             "logo": "https://epg.112114.eu.org/logo/{name}.png"
-        }, {
+        },
+        {
             "name": "TianmuTNT",
             "type": 0,
             "url": "https://ghfast.top/raw.githubusercontent.com/TianmuTNT/iptv/main/iptv.txt",
@@ -1766,12 +1786,14 @@
             "ua": "okhttp/3.15",
             "epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
-        }, {
+        },
+        {
             "name": "IPv6 神源",
             "type": 0,
             "url": "https://kakaxi.indevs.in/ipv6.m3u",
             "playerType": 2
-        }, {
+        },
+        {
             "name": "国内直播源",
             "type": 0,
             "url": "https://myernestlu.github.io/zby.txt",
@@ -1779,17 +1801,20 @@
             "ua": "okhttp/3.15",
             "epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
-        }, {
+        },
+        {
             "name": "Kimentanm",
             "type": 0,
             "url": "https://cdn.gh-proxy.org/https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
             "playerType": 2
-        }, {
+        },
+        {
             "name": "月灿",
             "type": 0,
             "url": "https://m3u.002397.xyz/ycl_iptv.m3u",
             "playerType": 2
-        }, {
+        },
+        {
             "name": "cymz6",
             "type": 0,
             "url": "https://m3u.ibert.me/txt/cymz6_lives.txt",
@@ -1797,7 +1822,8 @@
             "ua": "okhttp/3.15",
             "epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
-        }, {
+        },
+        {
             "name": "YanG",
             "type": 0,
             "url": "https://m3u.ibert.me/txt/y_g.txt",
@@ -1805,7 +1831,8 @@
             "ua": "okhttp/3.15",
             "epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
-        }, {
+        },
+        {
             "name": "iptv.org 中国",
             "type": 0,
             "url": "https://m3u.ibert.me/txt/o_cn.txt",
@@ -1813,7 +1840,8 @@
             "ua": "okhttp/3.15",
             "epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
-        }, {
+        },
+        {
             "name": "epg.pw 中国",
             "type": 0,
             "url": "https://m3u.ibert.me/txt/cn.txt",
