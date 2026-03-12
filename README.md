@@ -6,10 +6,11 @@
 
 原地址：
 - https://raw.githubusercontent.com/niuber/niuber/refs/heads/main/niuber.json
-
+- 
 git加速地址：
-
 - https://cdn.gh-proxy.org/https://raw.githubusercontent.com/niuber/niuber/refs/heads/main/niuber.json
 - https://gh-proxy.org/https://raw.githubusercontent.com/niuber/niuber/refs/heads/main/niuber.json
 
-
+## 2、自用IPTV
+git加速地址：
+- https://gh-proxy.org/https://raw.githubusercontent.com/niuber/iptv-api/refs/heads/master/output/niuber.m3u
