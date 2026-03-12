@@ -1,13 +1,11 @@
 
 # GitHub Action的元数据定义
 name: run GitHub Action  # Action的显示名称
-description: '定时手动触发 GitHub Action'  # Action的功能描述
-author: 'Niuber'  # Action作者
 
-# Action的品牌标识（在GitHub Marketplace中显示）
-branding:
-  icon: play-circle  # 使用的图标名称
-  color: blue       # 图标的颜色
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch:  # 允许手动触发
 
 # 定义Action的输入参数
 inputs:
