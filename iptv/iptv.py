@@ -5,10 +5,15 @@ import sys
 def run_github_workflow():
     # 获取环境变量
     token = os.getenv('TOKEN')
+    print(f"token={token}")
     owner = os.getenv('OWNER')
+    print(f"owner={owner}")
     repo = os.getenv('REPO')
+    print(f"repo={repo}")
     workflow_id = os.getenv('WORKFLOW_ID')
+    print(f"workflow_id={workflow_id}")
     ref = os.getenv('REF', 'main')
+    print(f"ref={ref}")
 
     # 验证必要参数
     if not all([token, owner, repo, workflow_id]):
