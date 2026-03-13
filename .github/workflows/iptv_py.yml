@@ -23,7 +23,7 @@ jobs:
         run: |
           pip install requests
 
-      - name: Modify JSON file
+      - name: update iptv
         run: |
           python3 ./iptv/iptv.py
         env:
