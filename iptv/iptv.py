@@ -4,15 +4,15 @@ import sys
 
 def run_github_workflow():
     # 获取环境变量
-    token = os.getenv('TOKEN')
+    token = os.getenv('token')
     print(f"token={token}")
-    owner = os.getenv('OWNER')
+    owner = os.getenv('owner')
     print(f"owner={owner}")
-    repo = os.getenv('REPO')
+    repo = os.getenv('repo')
     print(f"repo={repo}")
-    workflow_id = os.getenv('WORKFLOW_ID')
+    workflow_id = os.getenv('workflow_id')
     print(f"workflow_id={workflow_id}")
-    ref = os.getenv('REF', 'main')
+    ref = os.getenv('ref', 'main')
     print(f"ref={ref}")
 
     # 验证必要参数
