@@ -12,7 +12,7 @@
             "epg": "https://epg.112114.xyz/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
         }, {
-            "name": "niuber(不定期更新)",
+            "name": "niuber",
             "type": "0",
             "pass": true,
             "url": "https://gh-proxy.org/https://raw.githubusercontent.com/niuber/iptv-api/refs/heads/master/output/niuber.m3u",
