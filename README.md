@@ -20,4 +20,5 @@ git加速地址：
 - m3u：https://gh-proxy.org/https://raw.githubusercontent.com/niuber/iptv-api/refs/heads/master/output/niuber.m3u
 - txt：https://gh-proxy.org/https://raw.githubusercontent.com/niuber/iptv-api/refs/heads/master/output/niuber.txt
 
-![如果觉得还可以，请支持一下 🙏🏻](res/sponsor.jpg)
+## 如果觉得还可以，请支持一下 🙏🏻
+![🙏🏻](res/sponsor.jpg)
