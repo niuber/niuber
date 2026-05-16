@@ -37,7 +37,7 @@ jobs:
     - name: Download and extract file
       run: |
         # 下载 ZIP 文件（替换为你的 URL）
-        DOWNLOAD_URL="https://gh-proxy.org/https://github.com/PizazzGY/NewTVBox/raw/refs/heads/main/单线路.zip"
+        DOWNLOAD_URL="https://gh-proxy.org/https://github.com/PizazzGY/NewTVBox/blob/main/local/单线路.zip"
         wget -O ./temp.zip "$DOWNLOAD_URL"
         
         # 解压到目标目录
