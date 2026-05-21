@@ -1,6 +1,6 @@
 {
     "urls": [{
-            "name": "🦅🦅更新于:2026-05-21 09:40:00",
+            "name": "🦅🦅更新于:2026-05-21 09:45:00",
             "url": ""
         }, {
             "url": "",
@@ -33,7 +33,7 @@
             "name": "🌟dxawi",
             "url": "https://dxawi.github.io/0/0.json"
         }, {
-            "name": "OK",
+            "name": "🌟OK",
             "url": "https://play.iptv365.org/OK/api.json"
         }, {
             "name": "🌟小米",
@@ -50,12 +50,6 @@
         }, {
             "name": "🌟小虎斑",
             "url": "https://play.iptv365.org/小虎斑/api.json"
-        }, {
-            "name": "❤摸鱼儿",
-            "url": "https://play.iptv365.org/摸鱼儿/api.json"
-        }, {
-            "name": "❤️iptv365",
-            "url": "https://play.iptv365.org/iptv365/api.json"
         }, {
             "name": "🌟讴歌",
             "url": "http://tv.nxog.top/m/111.php?ou=公众号欧歌app&mz=all&jar=all&b=欧歌"
@@ -74,6 +68,12 @@
         }, {
             "name": "🌟少儿频道",
             "url": "https://jihulab.com/ymz1231/xymz/-/raw/main/ymshaoer"
+        }, {
+            "name": "❤摸鱼儿",
+            "url": "https://play.iptv365.org/摸鱼儿/api.json"
+        }, {
+            "name": "❤️iptv365",
+            "url": "https://play.iptv365.org/iptv365/api.json"
         }, {
             "name": "❤️盒子迷",
             "url": "https://盒子迷.top/禁止贩卖"
@@ -157,16 +157,16 @@
             "url": "https://6492.kstore.space/xnf/xnf.json"
         }, {
             "url": "https://tvbox.catvod.com/catvod.json",
-            "name": "🐱Catvod-💠自用"
+            "name": "🌱Catvod-💠自用"
         }, {
             "url": "https://tvbox.catvod.com/xs/api.json",
-            "name": "🐱Catvod-😎潇洒"
+            "name": "🌱Catvod-😎潇洒"
         }, {
             "url": "https://tvbox.catvod.com/jsm.json",
-            "name": "🐱Catvod-💠PG"
+            "name": "🌱Catvod-💠PG"
         }, {
             "url": "https://tvbox.catvod.com/FongMi.json",
-            "name": "🐱Catvod-🌸FongMi"
+            "name": "🌱Catvod-🌸FongMi"
         }, {
             "name": "❌巧记",
             "url": "http://cdn.qiaoji8.com/tvbox.json"
