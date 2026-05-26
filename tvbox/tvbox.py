@@ -99,7 +99,7 @@ if __name__ == "__main__":
     modify_api(src_file, dest_file)
 
     #添加TX源
-    addTX2api(dest_file)
+    #addTX2api(dest_file)
     
     jsonpath = os.getenv('JSON_FILE', './niuber.json')
     #修改niuber.json更新时间
