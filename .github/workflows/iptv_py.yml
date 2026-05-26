@@ -12,6 +12,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: 删除除了最近5条以外的所有运行记录
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 获取所有运行记录的ID，按创建时间降序排列（最新的在前）
+          gh api repos/${{ github.repository }}/actions/runs \
+            --paginate \
+            --jq '.workflow_runs | sort_by(.created_at) | reverse | .[].id' \
+            > all_run_ids.txt
+
+          # 统计总数并跳过前5条（保留最新5条）
+          total=$(wc -l < all_run_ids.txt)
+          keep=5
+          if [ "$total" -le "$keep" ]; then
+            echo "当前仅有 $total 条记录，无需删除。"
+            exit 0
+          fi
+
+          delete_count=$((total - keep))
+          echo "将删除 $delete_count 条旧记录..."
+
+          # 从第6行开始读取ID并执行删除
+          tail -n +$((keep + 1)) all_run_ids.txt | while read -r run_id; do
+            echo "正在删除运行记录 ID: $run_id"
+            gh api -X DELETE repos/${{ github.repository }}/actions/runs/$run_id
+          done
+
+          echo "清理完成，已保留最新 $keep 条运行记录。"
+    
       - name: Checkout repository
         uses: actions/checkout@v5
 
