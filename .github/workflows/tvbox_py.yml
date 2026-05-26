@@ -11,57 +11,85 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v5
-      with:
-        token: ${{ secrets.SECRET_TVBOX }}  # 确保有写入权限
+      - name: 清除action运行记录（保留10条）
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 获取所有运行记录的ID，按创建时间降序排列（最新的在前）
+          gh api repos/${{ github.repository }}/actions/runs \
+            --paginate \
+            --jq '.workflow_runs | sort_by(.created_at) | reverse | .[].id' \
+            > all_run_ids.txt
 
-    - name: Set up Python
-      uses: actions/setup-python@v6
-      with:
-        python-version: '3.10'
+          # 统计总数并跳过前10条（保留最新10条）
+          total=$(wc -l < all_run_ids.txt)
+          keep=10
+          if [ "$total" -le "$keep" ]; then
+            echo "当前仅有 $total 条记录，无需删除。"
+            exit 0
+          fi
 
-    - name: Install dependencies
-      run: |
-        pip install requests pytz
+          delete_count=$((total - keep))
+          echo "将删除 $delete_count 条旧记录..."
 
-    - name: Clean old files
-      run: |
-        TARGET_DIR="./tvbox/TVBoxOSC/"  # 目标目录（可修改）
-        
-        # 清理旧文件（避免冲突）
-        if [ -d "$TARGET_DIR" ]; then
-          rm -rf "$TARGET_DIR"
-        fi
-        mkdir -p "$TARGET_DIR"
-
-    - name: Download and extract file
-      run: |
-        # 下载 ZIP 文件（替换为你的 URL）
-        DOWNLOAD_URL="https://gh-proxy.org/https://github.com/PizazzGY/NewTVBox/blob/main/local/单线路.zip"
-        #wget -O  ./temp.zip "$DOWNLOAD_URL"
-        wget -O ./temp.zip --no-check-certificate "$DOWNLOAD_URL"
-        
-        # 解压到目标目录
-        unzip ./temp.zip -d tvbox/
-        
-        # 删除临时 ZIP 文件
-        rm -f ./temp.zip
-
-    - name: Modify JSON file
-      run: |
-        python3 ./tvbox/tvbox.py
-      env:
-        SRC_FILE: './tvbox/api.json'  # 源 JSON 文件路径
-        DEST_FILE: './tvbox/TVBoxOSC/tvbox/api.json'    # 目标 JSON 文件路径
-        JSON_FILE: './niuber.json'    # 目标 JSON 文件路径
-
-    - name: Commit and push changes
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add .
-        # 设置时区为北京时间并提交
-        export TZ='Asia/Shanghai'
-        git commit -m "定时更新潇洒tvbox并更新lives、parses、ads信息,时间：$(date +'%Y-%m-%d')" || echo "No changes to commit"
-        git push
+          # 从第6行开始读取ID并执行删除
+          tail -n +$((keep + 1)) all_run_ids.txt | while read -r run_id; do
+            echo "正在删除运行记录 ID: $run_id"
+            gh api -X DELETE repos/${{ github.repository }}/actions/runs/$run_id
+          done
+          echo "清理完成，已保留最新 $keep 条运行记录。"
+    
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.SECRET_TVBOX }}  # 确保有写入权限
+  
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.10'
+  
+      - name: Install dependencies
+        run: |
+          pip install requests pytz
+  
+      - name: Clean old files
+        run: |
+          TARGET_DIR="./tvbox/TVBoxOSC/"  # 目标目录（可修改）
+          
+          # 清理旧文件（避免冲突）
+          if [ -d "$TARGET_DIR" ]; then
+            rm -rf "$TARGET_DIR"
+          fi
+          mkdir -p "$TARGET_DIR"
+  
+      - name: Download and extract file
+        run: |
+          # 下载 ZIP 文件（替换为你的 URL）
+          DOWNLOAD_URL="https://gh-proxy.org/https://github.com/PizazzGY/NewTVBox/blob/main/local/单线路.zip"
+          #wget -O  ./temp.zip "$DOWNLOAD_URL"
+          wget -O ./temp.zip --no-check-certificate "$DOWNLOAD_URL"
+          
+          # 解压到目标目录
+          unzip ./temp.zip -d tvbox/
+          
+          # 删除临时 ZIP 文件
+          rm -f ./temp.zip
+  
+      - name: Modify JSON file
+        run: |
+          python3 ./tvbox/tvbox.py
+        env:
+          SRC_FILE: './tvbox/api.json'  # 源 JSON 文件路径
+          DEST_FILE: './tvbox/TVBoxOSC/tvbox/api.json'    # 目标 JSON 文件路径
+          JSON_FILE: './niuber.json'    # 目标 JSON 文件路径
+  
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          # 设置时区为北京时间并提交
+          export TZ='Asia/Shanghai'
+          git commit -m "定时更新潇洒tvbox并更新lives、parses、ads信息,时间：$(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git push
