@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 删除除了最近5条以外的所有运行记录
+      - name: 清除action运行记录（保留10条）
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -22,9 +22,9 @@ jobs:
             --jq '.workflow_runs | sort_by(.created_at) | reverse | .[].id' \
             > all_run_ids.txt
 
-          # 统计总数并跳过前5条（保留最新5条）
+          # 统计总数并跳过前10条（保留最新10条）
           total=$(wc -l < all_run_ids.txt)
-          keep=5
+          keep=10
           if [ "$total" -le "$keep" ]; then
             echo "当前仅有 $total 条记录，无需删除。"
             exit 0
