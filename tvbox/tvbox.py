@@ -83,7 +83,7 @@ def addTX2api(src_path):
         data.append(new_item)
     elif isinstance(data, dict):
         # 如果是字典，可以以 key 为键存入，或放入某个字段
-        data['sources'] = data.get('sources', []) + [new_item]
+        data['sites'] = data.get('sites', []) + [new_item]
 
     # 写回文件
     with open(src_path, 'w', encoding='utf-8') as f:
