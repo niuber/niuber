@@ -61,6 +61,35 @@ def modify_json(src_path):
     except Exception as e:
         print(f"❌ 修改niuber.json出错: {str(e)}")
         raise
+def addTX2api(src_path):
+    # 要添加的配置项（就是你现在发的这个）
+    new_item = {
+        "key": "腾讯视频",
+        "name": "腾讯｜视频",
+        "type": 3,
+        "api": "./js/drpy2.min.js",
+        "ext": "./js/腾讯视频.js"
+    }
+
+    # 读取目标文件
+    try:
+        with open(src_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        data = []   # 如果文件不存在，初始化为空列表
+
+    # 如果目标 JSON 是列表，直接 append
+    if isinstance(data, list):
+        data.append(new_item)
+    elif isinstance(data, dict):
+        # 如果是字典，可以以 key 为键存入，或放入某个字段
+        data['sources'] = data.get('sources', []) + [new_item]
+
+    # 写回文件
+    with open(src_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+
+    print("已添加腾讯视频配置到目标 JSON")
 
 if __name__ == "__main__":
     # 从环境变量读取路径（默认值用于本地测试）
@@ -69,6 +98,9 @@ if __name__ == "__main__":
     #修改api.json 添加直播、解析、广告过滤
     modify_api(src_file, dest_file)
 
+    #添加TX源
+    addTX2api(dest_file)
+    
     jsonpath = os.getenv('JSON_FILE', './niuber.json')
     #修改niuber.json更新时间
     modify_json(jsonpath)
