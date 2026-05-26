@@ -64,8 +64,8 @@ def modify_json(src_path):
 def addTX2api(src_path):
     # 要添加的配置项（就是你现在发的这个）
     new_item = {
-        "key": "腾讯视频",
-        "name": "腾讯｜视频",
+        "key": "TX视频",
+        "name": "TX｜视频",
         "type": 3,
         "api": "./js/drpy2.min.js",
         "ext": "./js/腾讯视频.js"
