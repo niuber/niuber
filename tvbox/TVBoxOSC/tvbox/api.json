@@ -1628,13 +1628,6 @@
             "searchable": 0,
             "filterable": 0,
             "changeable": 0
-        },
-        {
-            "key": "腾讯视频",
-            "name": "腾讯｜视频",
-            "type": 3,
-            "api": "./js/drpy2.min.js",
-            "ext": "./js/腾讯视频.js"
         }
     ],
     "lives": [
