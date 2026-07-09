@@ -1771,227 +1771,40 @@
                     "user-agent": "Mozilla/5.0 (Linux; Android 13; V2049A Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/116.0.0.0 Mobile Safari/537.36"
                 }
             }
-        },
-        {
-            "name": "Json聚合",
-            "type": 3,
-            "url": "Demo"
-        },
-        {
-            "name": "jx",
+        }, {
+            "name": "M1907",
             "type": 0,
-            "url": "https://jx.m3u8.tv/jx/jx.php?url="
-        },
-        {
-            "name": "羽路均沾",
-            "type": 0,
-            "url": "https://ylu.cc/index.php?url="
-        },
-        {
-            "name": "999",
-            "type": 0,
-            "url": "https://huayong.net/999/?v="
-        },
-        {
-            "name": "jx5",
-            "type": 0,
-            "url": "https://huayong.net/jx5/?url="
-        },
-        {
-            "name": "无尽",
-            "type": 0,
-            "url": "https://jx.wujinkk.com/dplayer/?url=",
+            "url": "https://im1907.top/?jx=",
             "ext": {
                 "header": {
-                    "User-Agent": "Mozilla/5.0"
+                    "user-agent": "Mozilla/5.0 (Linux; Android 13; V2049A Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/116.0.0.0 Mobile Safari/537.36"
                 }
             }
-        },
-        {
-            "name": "解析3",
+        }, {
+            "name": "CK解析",
             "type": 0,
-            "url": "https://player.mrgaocloud.com/player/?url="
-        },
-        {
-            "name": "vip4",
-            "type": 0,
-            "url": "https://huayong.net/vip4/?url="
-        },
-        {
-            "name": "全民",
-            "url": "http://api.wpsseo.cn/?v=",
-            "type": 0,
+            "url": "https://www.ckplayer.vip/jiexi/?url=",
             "ext": {
-                "flag": [
-                    "qiyi",
-                    "imgo",
-                    "爱奇艺",
-                    "奇艺",
-                    "qq",
-                    "腾讯",
-                    "youku",
-                    "优酷",
-                    "pptv",
-                    "PPTV",
-                    "letv",
-                    "乐视",
-                    "leshi",
-                    "bilibili",
-                    "哔哩哔哩",
-                    "哔哩",
-                    "mgtv",
-                    "芒果",
-                    "sohu",
-                    "xigua",
-                    "fun",
-                    "风行"
-                ],
                 "header": {
-                    "User-Agent": "Mozilla/5.0"
+                    "user-agent": "Mozilla/5.0 (Linux; Android 13; V2049A Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/116.0.0.0 Mobile Safari/537.36"
                 }
             }
-        },
-        {
-            "name": "8090",
-            "url": "https://www.8090.la/lander?url=",
+        }, {
+            "name": "fongmi",
             "type": 0,
+            "url": "https://json.fongmi.cc/web?url=",
             "ext": {
-                "flag": [
-                    "qiyi",
-                    "imgo",
-                    "爱奇艺",
-                    "奇艺",
-                    "qq",
-                    "腾讯",
-                    "youku",
-                    "优酷",
-                    "pptv",
-                    "PPTV",
-                    "letv",
-                    "乐视",
-                    "leshi",
-                    "bilibili",
-                    "哔哩哔哩",
-                    "哔哩",
-                    "mgtv",
-                    "芒果",
-                    "sohu",
-                    "xigua",
-                    "fun",
-                    "风行"
-                ],
                 "header": {
-                    "User-Agent": "Mozilla/5.0"
+                    "user-agent": "Mozilla/5.0 (Linux; Android 13; V2049A Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/116.0.0.0 Mobile Safari/537.36"
                 }
             }
-        },
-        {
-            "name": "看看",
+        }, {
+            "name": "superplayr",
             "type": 0,
-            "url": "https://jx.m3u8.pw/?url="
-        },
-        {
-            "name": "pandown",
-            "type": 1,
-            "url": "http://pandown.pro/app/kkdy.php?url=",
+            "url": "https://super.playr.top/?url=",
             "ext": {
-                "flag": [
-                    "qq",
-                    "腾讯",
-                    "qiyi",
-                    "爱奇艺",
-                    "奇艺",
-                    "youku",
-                    "优酷",
-                    "sohu",
-                    "搜狐",
-                    "letv",
-                    "乐视",
-                    "mgtv",
-                    "芒果",
-                    "rx",
-                    "ltnb",
-                    "bilibili",
-                    "1905",
-                    "xigua"
-                ]
-            }
-        },
-        {
-            "name": "左岸",
-            "type": 1,
-            "url": "https://api.tyun77.cn/api.php/provide/parseDicturl?url=",
-            "ext": {
-                "flag": [
-                    "爱奇艺",
-                    "奇艺",
-                    "qq",
-                    "腾讯",
-                    "youku",
-                    "优酷",
-                    "pptv",
-                    "PPTV",
-                    "letv",
-                    "乐视",
-                    "leshi",
-                    "bilibili",
-                    "哔哩哔哩",
-                    "哔哩",
-                    "mgtv",
-                    "芒果",
-                    "芒果"
-                ],
                 "header": {
-                    "User-Agent": "okhttp/3.12.0"
-                }
-            }
-        },
-        {
-            "name": "无上",
-            "type": "1",
-            "url": "https://mfjx.iwsyy.xyz/?url=",
-            "ext": {
-                "flag": [
-                    "qq",
-                    "腾讯",
-                    "qiyi",
-                    "爱奇艺",
-                    "奇艺",
-                    "youku",
-                    "优酷",
-                    "sohu",
-                    "搜狐",
-                    "letv",
-                    "乐视",
-                    "mgtv",
-                    "芒果",
-                    "tnmb",
-                    "seven",
-                    "bilibili",
-                    "1905"
-                ],
-                "header": {
-                    "User-Agent": "okhttp/4.9.1"
-                }
-            }
-        },
-        {
-            "name": "巧计",
-            "type": 1,
-            "url": "https://zy.qiaoji8.com/xiafan.php?url=",
-            "ext": {
-                "flag": [
-                    "QD4K",
-                    "iyf",
-                    "duanju",
-                    "gzcj",
-                    "GTV",
-                    "GZYS",
-                    "weggz",
-                    "Ace"
-                ],
-                "header": {
-                    "User-Agent": "okhttp/4.9.1"
+                    "user-agent": "Mozilla/5.0 (Linux; Android 13; V2049A Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/116.0.0.0 Mobile Safari/537.36"
                 }
             }
         }
