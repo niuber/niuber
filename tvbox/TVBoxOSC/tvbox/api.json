@@ -239,17 +239,32 @@
             "ext": "https://qpcj.69mini.com/api.php/app/"
         },
         {
-            "key": "蓝鹰",
-            "name": "蓝鹰 • APP",
+            "key": "爱影",
+            "name": "爱影 • APP",
             "type": 3,
             "api": "csp_AppQi",
             "searchable": 1,
             "changeable": 1,
             "ext": {
-                "site": "https://xinlanyinghb.oss-cn-wuhan-lr.aliyuncs.com/xly.txt",
-                "dataKey": "ca94b06ca359d80e",
-                "dataIv": "ca94b06ca359d80e",
-                "init": "initV120",
+                "site": "https://aysappto.oss-cn-chengdu.aliyuncs.com/q26.txt",
+                "dataKey": "0UKM8jkasM8tdzgW",
+                "dataIv": "0UKM8jkasM8tdzgW",
+                "init": "initV122",
+                "ua": "okhttp/3.10.0"
+            }
+        },
+        {
+            "key": "怀桑",
+            "name": "怀桑 • APP",
+            "type": 3,
+            "api": "csp_AppQi",
+            "searchable": 1,
+            "changeable": 1,
+            "ext": {
+                "site": "https://daen-1256234123.cos.ap-shanghai.myqcloud.com/MuQi/mqxhqj.txt",
+                "dataKey": "kj37zs29q22jk96t",
+                "dataIv": "kj37zs29q22jk96t",
+                "init": "initV122",
                 "ua": "okhttp/3.10.0"
             }
         },
