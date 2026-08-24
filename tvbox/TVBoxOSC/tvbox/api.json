@@ -88,7 +88,6 @@
             "api": "csp_App99",
             "ext": {
                 "host": "http://124.221.3.182:19987/app/bn",
-                "appkey": "d1f0c269eab74d93821fffc9befdbbba",
                 "versionName": "1.2.0",
                 "name": "剧圈圈",
                 "package": "com.qingtangxiaozhuan.xyz",
@@ -103,7 +102,6 @@
             "api": "csp_App99",
             "ext": {
                 "host": "http://103.217.190.91:19987/app/bn",
-                "appkey": "24d625a8a29b4700a1a294c6f3b29e2c",
                 "versionName": "3.5.8",
                 "name": "半日闲",
                 "package": "com.yf.lelian",
@@ -222,18 +220,19 @@
             }
         },
         {
-            "key": "怀桑",
-            "name": "怀桑 • APP",
+            "key": "奇奇",
+            "name": "奇奇 • APP",
             "type": 3,
             "api": "csp_AppQi",
             "searchable": 1,
             "changeable": 1,
             "ext": {
-                "site": "https://daen-1256234123.cos.ap-shanghai.myqcloud.com/MuQi/mqxhqj.txt",
-                "dataKey": "kj37zs29q22jk96t",
-                "dataIv": "kj37zs29q22jk96t",
+                "site": "https://yun-1316442804.cos.ap-guangzhou.myqcloud.com/603.txt",
+                "dataKey": "FTgP4Gq8zPiqbt7M",
+                "dataIv": "FTgP4Gq8zPiqbt7M",
                 "init": "initV122",
-                "ua": "okhttp/3.10.0"
+                "ua": "okhttp/3.10.0",
+                "search": "searchList8"
             }
         },
         {
@@ -247,19 +246,6 @@
                 "url": "https://appcms.4ksj.app",
                 "dataKey": "O3K6rYx75Q4xtiIE",
                 "dataIv": "O3K6rYx75Q4xtiIE"
-            }
-        },
-        {
-            "key": "不戳",
-            "name": "不戳 • APP",
-            "type": 3,
-            "api": "csp_AppGet",
-            "searchable": 1,
-            "changeable": 1,
-            "ext": {
-                "url": "https://appcmszbc.zbc4k.app",
-                "dataKey": "pYrEkiWRYhBLTUTC",
-                "dataIv": "pYrEkiWRYhBLTUTC"
             }
         },
         {
@@ -371,6 +357,7 @@
             "changeable": 1,
             "ext": {
                 "site": [
+                    "http://xsayang.fun",
                     "http://38.76.197.172:12521"
                 ]
             },
@@ -514,6 +501,7 @@
             "changeable": 1,
             "ext": {
                 "site": [
+                    "http://xhban.xyz",
                     "http://38.76.197.172:16969"
                 ]
             },
@@ -525,9 +513,7 @@
             "type": 3,
             "api": "csp_SeedHub",
             "searchable": 1,
-            "quickSearch": 1,
-            "filterable": 1,
-            "changeable": 1,
+            "quickSearch": 0,
             "ext": {
                 "site": [
                     "https://sidhub.cc",
@@ -723,25 +709,11 @@
             "ext": "https://y2s52n7.com,https://m.hkybqufgh.com,https://m.sizhengxt.com,https://m.9zhoukj.com,https://m.sizhengxt.com,https://m.jiabaide.cn"
         },
         {
-            "key": "修罗影视",
-            "name": "修罗 • 影视",
-            "api": "csp_Xlys",
-            "type": 3,
-            "ext": "https://www.xlysw.ggff.net"
-        },
-        {
             "key": "骚火影视",
             "name": "骚火 • 影视",
             "type": 3,
             "api": "csp_SaoHuo",
             "ext": "https://shdy5.us"
-        },
-        {
-            "key": "农民影视",
-            "name": "农民 • 影视",
-            "type": 3,
-            "api": "csp_Wwys",
-            "ext": "https://vip.wwgz.cn:5200"
         },
         {
             "key": "枫叶影视",
@@ -758,18 +730,6 @@
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 1
-        },
-        {
-            "key": "小镇影视",
-            "name": "小镇 • 影视",
-            "type": 3,
-            "api": "csp_XBPQ",
-            "ext": {
-                "线路数组": "<a data-toggle=\"tab\"&&/a>",
-                "线路标题": ">&&<",
-                "分类url": "http://dyxz.tv/list/{cateId}_{catePg}.html",
-                "分类": "电影$1#电视剧$2#动漫$3#综艺$4"
-            }
         },
         {
             "key": "面包影视",
@@ -846,29 +806,15 @@
             "type": 3,
             "api": "csp_App99",
             "ext": {
-                "host": "http://175.178.65.250:19987/app/bn",
+                "host": "http://111.180.139.119:19987/app/bn",
                 "LoginPath": "/app/log",
                 "appkey": "f66f65db127e48449f073c2c6eb0f993",
-                "versionName": "6.4.5",
+                "versionName": "6.4.9",
                 "name": "双子星动漫",
-                "package": "com.yingfu.mobile.android.pgsp",
-                "buildNumber": "2003",
-                "buildSignature": "054FA8DDA4319C6B6A9B954CA5777541C993F00B1B0BD4394F7EDE48184C4594"
+                "package": "com.haiwang.liangxia.my.ym",
+                "buildNumber": "2001",
+                "buildSignature": "A40DA80A59D170CAA950CF15C18C454D47A39B26989D8B640ECD745BA71BF5DC"
             }
-        },
-        {
-            "key": "喵呜动漫",
-            "name": "喵呜 • 动漫",
-            "type": 3,
-            "searchable": 1,
-            "api": "csp_MiaoWu"
-        },
-        {
-            "key": "魔都动漫",
-            "name": "魔都 • 动漫",
-            "type": 3,
-            "searchable": 1,
-            "api": "csp_MoDu"
         },
         {
             "key": "漫国动漫",
