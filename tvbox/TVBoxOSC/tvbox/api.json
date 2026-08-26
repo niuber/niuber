@@ -190,6 +190,21 @@
             }
         },
         {
+            "key": "怀桑",
+            "name": "怀桑 • APP",
+            "type": 3,
+            "api": "csp_AppQi",
+            "searchable": 1,
+            "changeable": 1,
+            "ext": {
+                "url": "http://110.42.67.130:1226",
+                "dataKey": "kj37zs29q22jk96t",
+                "dataIv": "kj37zs29q22jk96t",
+                "init": "initV122",
+                "ua": "okhttp/3.10.0"
+            }
+        },
+        {
             "key": "蓝鹰",
             "name": "蓝鹰 • APP",
             "type": 3,
@@ -339,7 +354,8 @@
             "changeable": 1,
             "ext": {
                 "site": [
-                    "https://www.wogg.net",
+                    "https://www.wogg.live",
+                    "https://woggpan.888484.xyz",
                     "https://wogg.xxooo.cf",
                     "https://woggpan.xxooo.cf"
                 ]
