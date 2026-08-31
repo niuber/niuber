@@ -2,7 +2,7 @@ name: update TVBox
 
 on:
   schedule:
-    - cron: '0 */4 * * *'
+    - cron: '0 */8 * * *'
       timezone: 'Asia/Shanghai'
   workflow_dispatch:  # 允许手动触发
 
@@ -66,7 +66,7 @@ jobs:
       - name: Download and extract file
         run: |
           # 下载 ZIP 文件（替换为你的 URL）
-          DOWNLOAD_URL="https://oss-v1.wangmeipo.cn/236/单线路.zip"
+          DOWNLOAD_URL="https://axisnow.gh-proxy.org/https://github.com/PizazzGY/NewTVBox/raw/refs/heads/main/单线路.zip"
           #wget -O  ./temp.zip "$DOWNLOAD_URL"
           wget -O ./temp.zip --no-check-certificate "$DOWNLOAD_URL"
           
