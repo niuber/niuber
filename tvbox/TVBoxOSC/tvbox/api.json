@@ -1560,7 +1560,7 @@
             "name": "niuber",
             "type": "0",
             "pass": true,
-            "url": "https://gh-proxy.org/https://raw.githubusercontent.com/niuber/iptv-api/refs/heads/master/output/niuber.m3u",
+            "url": "https://gh-proxy.org/https://raw.githubusercontent.com/niuber/iptv-api/refs/heads/master/output/iptv.m3u",
             "epg": "https://epg.v1.mk/json?ch={name}&date={date}",
             "logo": "https://epg.v1.mk/logo/{name}.png"
         },
