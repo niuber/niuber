@@ -13,12 +13,12 @@ git加速地址：
 
 ## 2、自用IPTV
 原地址：
-- m3u： https://raw.githubusercontent.com/niuber/iptv-api/refs/heads/master/output/niuber.m3u
-- txt： https://raw.githubusercontent.com/niuber/iptv-api/refs/heads/master/output/niuber.txt
+- m3u： https://raw.githubusercontent.com/niuber/iptv-api/refs/heads/master/output/iptv.m3u
+- txt： https://raw.githubusercontent.com/niuber/iptv-api/refs/heads/master/output/iptv.txt
   
 git加速地址：
-- m3u：https://gh-proxy.org/https://raw.githubusercontent.com/niuber/iptv-api/refs/heads/master/output/niuber.m3u
-- txt：https://gh-proxy.org/https://raw.githubusercontent.com/niuber/iptv-api/refs/heads/master/output/niuber.txt
+- m3u：https://gh-proxy.org/https://raw.githubusercontent.com/niuber/iptv-api/refs/heads/master/output/iptv.m3u
+- txt：https://gh-proxy.org/https://raw.githubusercontent.com/niuber/iptv-api/refs/heads/master/output/iptv.txt
 
 ## 如果觉得还可以，请支持一下 🙏🏻
 ![🙏🏻](res/sponsor.jpg)
