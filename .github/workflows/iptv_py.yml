@@ -10,7 +10,7 @@ on:
 
 jobs:
   process-files:
-    runs-on: Ubuntu 26.04.1 LTS
+    runs-on: ubuntu-26.04
 
     steps:
       - name: 清除action运行记录（保留10条）
